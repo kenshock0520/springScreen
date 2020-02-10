@@ -1,4 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body>
+<div id="global-navbar" layout:fragment="navbar" class="clearfix">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
   <a class="navbar-brand" href="#">ブランド</a>
   <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
     <span class="navbar-toggler-icon"></span>
@@ -10,7 +16,13 @@
         <a class="nav-link" href="#">ホーム <span class="sr-only">(現位置)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">リンク</a>
+        <a class="nav-link" href="company">company</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="upload">upload</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="list">list</a>
       </li>
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,3 +45,6 @@
     </form>
   </div><!-- /.navbar-collapse -->
 </nav>
+</div>
+</body>
+</html>

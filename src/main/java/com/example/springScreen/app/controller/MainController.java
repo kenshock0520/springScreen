@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.springScreen.domain.service.TestService;
 
 @Controller
-public class LoginController {
+public class MainController {
 
 	@Autowired
 	TestService testService;
@@ -32,9 +32,24 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView();
 
 		// テンプレートを指定
-		mv.setViewName("main/main");
+		mv.setViewName("index");
 
 		// 返却
 		return mv;
 	}
+	
+	  @RequestMapping(value = "/company", method = RequestMethod.GET)
+	  String comapny() {
+	    return "contents/company";
+	  }
+	  
+	  @RequestMapping(value = "/upload", method = RequestMethod.GET)
+	  String upload() {
+	    return "contents/upload";
+	  }
+	  
+	  @RequestMapping(value = "/list", method = RequestMethod.GET)
+	  String list() {
+	    return "contents/list";
+	  }
 }

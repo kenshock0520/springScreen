@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+  <title>会社情報</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/datatables/1.10.19/media/css/jquery.dataTables.min.css}"/>
+  <script type="text/javascript" th:src="@{/webjars/datatables/1.10.19/media/js/jquery.dataTables.min.js}" th:defer="true"></script>
+</head>
+<body>
+<div layout:fragment="content">
+<p style="height:150px;">
+listのページです。
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">見出し１</th>
+      <th scope="col">見出し２</th>
+      <th scope="col">見出し３</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>項目１</td>
+      <td>項目２</td>
+      <td>項目３</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>項目４</td>
+      <td>項目５</td>
+      <td>項目６</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>項目７</td>
+      <td>項目８</td>
+      <td><a class="form-control-sm bg-primary" id="empchange" data-toggle="modal" data-target="#modal-emp-select">選択</a></td>
+    </tr>
+  </tbody>
+</table>
+<div th:replace="modalempselect::modalempselect"></div>
+</div>
+</body>
+</html>

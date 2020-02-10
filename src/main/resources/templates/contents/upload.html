@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+  <title>会社情報</title>
+  <link rel="stylesheet" media="all" th:href="@{/application/css/upload.css}" />
+</head>
+<body>
+<div layout:fragment="content">
+<p style="height:150px;">
+uploadのページです。
+</p>
+<div id="file" class="input-group">
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile" name="custom[file][]" multiple>
+        <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
+    </div>
+    <div class="input-group-append">
+        <button type="button" class="btn btn-outline-secondary reset"><i class="fas fa-times fa-fw"></i>取消</button>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/application/js/upload.js}"></script>
+</div>
+</body>
+</html>
