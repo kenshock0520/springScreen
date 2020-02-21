@@ -3,11 +3,14 @@ package com.example.springScreen.app.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.springScreen.domain.service.CacheService;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +19,30 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/api")
 @Slf4j
 public class ApiController {
+	
+	@Autowired
+	CacheService cacheService;
+	
+	@GetMapping("/cacheTest")
+	public Object cacheTest() {
+		log.info("cacheTestメソッドきた1");
+		Map<String,String> map = cacheService.getCacheValue();
+		return map;
+	}
+	
+	@GetMapping("/cacheTestUpdate")
+	public Object cacheTestUpdate() {
+		log.info("cacheTestUpdateメソッドきた1");
+		Map<String,String> map = cacheService.setCacheValue();
+		return map;
+	}
+	
+	@GetMapping("/cacheTest2")
+	public Object cacheTest2() {
+		log.info("cacheTestメソッドきた1");
+		Map<String,String> map = cacheService.getCacheValue2();
+		return map;
+	}
 
 	@GetMapping("/test1")
 	public String test1() {
